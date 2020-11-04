@@ -3,7 +3,6 @@ package file.reader;
 import constants.HostsModifyConstant;
 import exception.ContinueException;
 import file.AbstractFileReader;
-import support.ClazzSupport;
 import support.FilePathSupport;
 import support.ReplaceItemCompareSupport;
 import support.StringSupport;
@@ -45,15 +44,13 @@ public class ReplaceItemReader extends AbstractFileReader {
             replaceItemKeyMap.put(StringSupport.sourceFormat(i), StringSupport.targetFormat(i));
         }
         contextMap.put(HostsModifyConstant.REPLACE_ITEM_KEY, replaceItemKeyMap);
-        contextMap.put(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE, new HashMap<>(1));
-        contextMap.put(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE, new HashMap<>(1));
     }
 
     @Override
     protected void lineDeal(String line, Map<String, Object> contextMap, CharArrayWriter outStream) {
         System.out.println("ReplaceItemReader 当前行内容=" + line);
-        Map<String, String> replaceItemSourceMap = ClazzSupport.cast(contextMap.get(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE));
-        Map<String, String> replaceItemTargetMap = ClazzSupport.cast(contextMap.get(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE));
+        Map<String, String> replaceItemSourceMap = new HashMap<>(1);
+        Map<String, String> replaceItemTargetMap = new HashMap<>(1);
         for(int i = 0; i <= totalCount; i++) {
             if(ReplaceItemCompareSupport.notEqualsSource(line, i) && ReplaceItemCompareSupport.notEqualsTarget(line, i)) {
                 continue;
@@ -61,14 +58,17 @@ public class ReplaceItemReader extends AbstractFileReader {
 
             if(ReplaceItemCompareSupport.equalsSource(line, i)) {
                 String value = this.checkAndGet(line);
-                replaceItemSourceMap.put(String.format(HostsModifyConstant.SOURCE, i), value);
+                replaceItemSourceMap.put(StringSupport.sourceFormat(i), value);
             }
 
             if(ReplaceItemCompareSupport.equalsTarget(line, i)) {
                 String value = this.checkAndGet(line);
-                replaceItemTargetMap.put(String.format(HostsModifyConstant.TARGET, i), value);
+                replaceItemTargetMap.put(StringSupport.targetFormat(i), value);
             }
         }
+
+        contextMap.put(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE, replaceItemSourceMap);
+        contextMap.put(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE, replaceItemTargetMap);
     }
 
     /**
