@@ -11,7 +11,7 @@ Windows下的hosts文件内容一键替换工具(使用前请自行配置好jdk�
 
 4、双击“本地开发.bat”或“测试环境.bat”即可实现切换
 
-<a href="./HostsModify.zip">（使用示例HostsModify.zip）</a>
+<a href="https://github.com/zhangxiaojianvip/HostsModify/releases/tag/V1.0">（使用示例HostsModify.zip）</a>
 
 文件说明
 --
