@@ -19,7 +19,7 @@ dev_data 配置规则(test_data同理)
 
 1、total=2
 
-描述：total=2表示有hosts文件里有两行内容需要替换
+描述：total=2表示在hosts文件里有两行内容需要替换
 
 2、
 
