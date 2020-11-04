@@ -11,6 +11,8 @@ Windows下的hosts文件内容替换工具
 
 4、双击enable.bat或disable.bat即可实现切换
 
+<a href="./HostsModify.zip">（使用示例）</a>
+
 文件说明
 --
 enable_data 配置规则(disable_data同理)
