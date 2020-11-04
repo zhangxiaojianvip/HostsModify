@@ -3,7 +3,7 @@ package support;
 /**
  * 替换项对比辅助类
  *
- * @author 张晓键 (xiaojian.zhang@ucarinc.com)
+ * @author 张晓键 (472649060@qq.com)
  * @since 2020年11月04日
  */
 public class ReplaceItemCompareSupport {

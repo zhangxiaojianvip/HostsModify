@@ -3,7 +3,7 @@ package support;
 /**
  * 类处理辅助类
  *
- * @author 张晓键 (xiaojian.zhang@ucarinc.com)
+ * @author 张晓键 (472694060@qq.com)
  * @since 2020年11月04日
  */
 public class ClazzSupport {
