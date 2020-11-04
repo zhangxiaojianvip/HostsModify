@@ -1,0 +1,6 @@
+total=2
+source[0]=#127.0.0.1 xxx.com
+target[0]=127.0.0.1 xxx.com
+
+source[1]=#127.0.0.1 xxx2.com
+target[1]=127.0.0.1 xxx2.com
