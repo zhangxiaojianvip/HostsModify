@@ -11,7 +11,7 @@ Windows下的hosts文件内容替换工具
 
 4、双击“本地开发.bat”或“测试环境.bat”即可实现切换
 
-<a href="./HostsModify.zip">（使用示例）</a>
+<a href="./HostsModify.zip">（使用示例HostsModify.zip）</a>
 
 文件说明
 --
