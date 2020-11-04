@@ -26,10 +26,10 @@ public class ReplaceItemReader extends AbstractFileReader {
 
     @Override
     protected void preData(Map<String, Object> contextMap) {
-        String enableOrDisable = (String) contextMap.get(HostsModifyConstant.ENABLE_OR_DISABLE);
+        String devOrTest = (String) contextMap.get(HostsModifyConstant.DEV_OR_TEST);
 
         AbstractFileReader fileReader = new TotalCountReader();
-        fileReader.getContextMap().put(HostsModifyConstant.ENABLE_OR_DISABLE, enableOrDisable);
+        fileReader.getContextMap().put(HostsModifyConstant.DEV_OR_TEST, devOrTest);
         fileReader.execute();
         Object totalObj = fileReader.getContextMap().get(HostsModifyConstant.REPLACE_ITEM_TOTAL_KEY);
         if(totalObj == null || Integer.parseInt(totalObj.toString()) == 0) {
@@ -37,7 +37,7 @@ public class ReplaceItemReader extends AbstractFileReader {
         }
         totalCount = Integer.parseInt(totalObj.toString());
 
-        this.setDataPath(FilePathSupport.getFilePath(enableOrDisable));
+        this.setDataPath(FilePathSupport.getFilePath(devOrTest));
 
         Map<String, String> replaceItemKeyMap = new HashMap<>(2);
         for(int i = 0; i <= totalCount; i++) {

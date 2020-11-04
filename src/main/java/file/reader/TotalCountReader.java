@@ -21,8 +21,8 @@ public class TotalCountReader extends AbstractFileReader {
 
     @Override
     protected void preData(Map<String, Object> contextMap) {
-        String enableOrDisable = (String) contextMap.get(HostsModifyConstant.ENABLE_OR_DISABLE);
-        this.setDataPath(FilePathSupport.getFilePath(enableOrDisable));
+        String devOrTest = (String) contextMap.get(HostsModifyConstant.DEV_OR_TEST);
+        this.setDataPath(FilePathSupport.getFilePath(devOrTest));
     }
 
     @Override

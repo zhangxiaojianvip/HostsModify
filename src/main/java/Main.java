@@ -15,10 +15,10 @@ public class Main {
 
     public static void main(String[] args) {
         AbstractFileReader abstractFileReader = new LineReplaceWriter();
-        //根据命令行参数来判断是使用enable_data还是disable_data配置文件
+        //根据命令行参数来判断是使用开发环境还是测试环境配置文件
         if(args != null && args.length > 0) {
-            String enableOrDisable = args[0];
-            abstractFileReader.getContextMap().put(HostsModifyConstant.ENABLE_OR_DISABLE, enableOrDisable);
+            String devOrTest = args[0];
+            abstractFileReader.getContextMap().put(HostsModifyConstant.DEV_OR_TEST, devOrTest);
         }
         abstractFileReader.execute();
     }
