@@ -45,10 +45,13 @@ public class LineReplaceWriter extends AbstractFileReader {
 
     @Override
     protected void lineDeal(String line, Map<String, Object> contextMap, CharArrayWriter outStream) {
+        System.out.println("LineReplaceWriter 当前行内容=" + line);
         replaceItemSourceMap.forEach((key, value) -> {
-            if(line.contains(key)) {
+            if(line.contains((String) value)) {
                 String targetKey = (String) replaceItemKeyMap.get(key);
                 try {
+                    System.out.println("原值：" + value);
+                    System.out.println("替换后：" + replaceItemTargetMap.get(targetKey));
                     outStream.write((String) replaceItemTargetMap.get(targetKey));
                 } catch (IOException e) {
                     e.printStackTrace();

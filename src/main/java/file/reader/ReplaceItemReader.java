@@ -51,6 +51,7 @@ public class ReplaceItemReader extends AbstractFileReader {
 
     @Override
     protected void lineDeal(String line, Map<String, Object> contextMap, CharArrayWriter outStream) {
+        System.out.println("ReplaceItemReader 当前行内容=" + line);
         Map<String, String> replaceItemSourceMap = ClazzSupport.cast(contextMap.get(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE));
         Map<String, String> replaceItemTargetMap = ClazzSupport.cast(contextMap.get(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE));
         for(int i = 0; i <= totalCount; i++) {

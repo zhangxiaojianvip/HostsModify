@@ -90,6 +90,8 @@ public abstract class AbstractFileReader {
         //重写修改后的文件内容
         try {
             if(writeFile) {
+                System.out.println("回写内容：");
+                System.out.println(outStream);
                 FileWriter out = new FileWriter(file);
                 outStream.writeTo(out);
                 out.close();
