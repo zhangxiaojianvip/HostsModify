@@ -64,6 +64,10 @@ public abstract class AbstractFileReader {
      */
     private void fileCirculation() {
         File file = new File(dataPath);
+        if(!file.exists()) {
+            System.out.println(String.format("文件不存在,dataPath=%s", dataPath));
+            throw new RuntimeException("文件不存在");
+        }
         CharArrayWriter outStream = new CharArrayWriter();
         //读取并根据每行内容进行lineDeal()处理
         try(FileReader fileReader = new FileReader(file); BufferedReader in = new BufferedReader(fileReader)) {
