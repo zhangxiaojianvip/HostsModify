@@ -3,6 +3,7 @@ package file.reader;
 import constants.HostsModifyConstant;
 import exception.ContinueException;
 import file.AbstractFileReader;
+import support.ClazzSupport;
 import support.FilePathSupport;
 import support.ReplaceItemCompareSupport;
 import support.StringSupport;
@@ -44,6 +45,8 @@ public class ReplaceItemReader extends AbstractFileReader {
             replaceItemKeyMap.put(StringSupport.sourceFormat(i), StringSupport.targetFormat(i));
         }
         contextMap.put(HostsModifyConstant.REPLACE_ITEM_KEY, replaceItemKeyMap);
+        contextMap.put(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE,new HashMap<>(1));
+        contextMap.put(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE,new HashMap<>(1));
     }
 
     @Override
@@ -67,8 +70,10 @@ public class ReplaceItemReader extends AbstractFileReader {
             }
         }
 
-        contextMap.put(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE, replaceItemSourceMap);
-        contextMap.put(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE, replaceItemTargetMap);
+        Map<String, String> sourceMap = ClazzSupport.cast(contextMap.get(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE));
+        sourceMap.putAll(replaceItemSourceMap);
+        Map<String, String> targetMap = ClazzSupport.cast(contextMap.get(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE));
+        targetMap.putAll(replaceItemTargetMap);
     }
 
     /**
