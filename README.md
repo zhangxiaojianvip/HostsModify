@@ -3,7 +3,7 @@ Windows下的hosts文件内容一键替换工具
 
 使用方法：
 ---
-1、项目打包后生成HostsModify.jar（也可以下载已打包好的文件/out/artifacts/HostModify/HostsModify.jar）
+1、项目打包后生成HostsModify-jar-with-dependencies.jar
 
 2、编辑dev_data和test_data文件（样例在代码的/src/main/resources/目录下）
 
@@ -11,7 +11,7 @@ Windows下的hosts文件内容一键替换工具
 
 4、双击“本地开发.bat”或“测试环境.bat”即可实现切换
 
-<a href="https://github.com/zhangxiaojianvip/HostsModify/releases/tag/V1.0">（使用示例HostsModify.zip）</a>
+<a href="https://github.com/zhangxiaojianvip/HostsModify/releases/tag/V1.1">（使用示例HostsModify.zip）</a>
 
 文件说明：
 ---
