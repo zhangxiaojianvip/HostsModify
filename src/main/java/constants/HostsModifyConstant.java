@@ -24,8 +24,6 @@ public class HostsModifyConstant {
 
     /** 空字符串 */
     public static final String EMPTY_STRING = "";
-    /** 替换配置项文件后缀 */
-    public static final String REPLACE_ITEM_FILE_LAST = "_data";
 
     /** 替换项截取字符串长度 */
     public static final Integer REPLACE_ITEM_SUBSTRING_LENGTH = 10;

@@ -18,11 +18,11 @@ public class FilePathSupport {
      * @return 文件路径
      */
     public static String getFilePath(String enableOrDisable) {
-        String prefix = HostsModifyConstant.EMPTY_STRING;
+        String fileName = HostsModifyConstant.EMPTY_STRING;
         if(enableOrDisable != null && !HostsModifyConstant.EMPTY_STRING.equals(enableOrDisable.trim())) {
-            prefix = enableOrDisable;
+            fileName = enableOrDisable;
         }
         String contextPath = new File(HostsModifyConstant.EMPTY_STRING).getAbsolutePath();
-        return contextPath + File.separator + prefix + HostsModifyConstant.REPLACE_ITEM_FILE_LAST;
+        return contextPath + File.separator + fileName ;
     }
 }

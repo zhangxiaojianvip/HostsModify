@@ -17,8 +17,8 @@ public class Main {
         AbstractFileReader abstractFileReader = new LineReplaceWriter();
         //根据命令行参数来判断是使用开发环境还是测试环境配置文件
         if(args != null && args.length > 0) {
-            String devOrTest = args[0];
-            abstractFileReader.getContextMap().put(HostsModifyConstant.ENVIRONMENT, devOrTest);
+            String env = args[0];
+            abstractFileReader.getContextMap().put(HostsModifyConstant.ENVIRONMENT, env);
         }
         abstractFileReader.execute();
     }
