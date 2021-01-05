@@ -7,7 +7,7 @@ Windows下的hosts文件内容一键替换工具
 
 2、编辑dev_data和test_data文件（样例在代码的/src/main/resources/目录下）
 
-3、保持HostsModify.jar、dev_data、test_data、本地开发.bat、测试环境.bat五个文件处于同一个目录
+3、HostsModify-jar-with-dependencies.jar、dev_data、test_data、本地开发.bat、测试环境.bat五个文件处于同一个目录
 
 4、双击“本地开发.bat”或“测试环境.bat”即可实现切换
 
