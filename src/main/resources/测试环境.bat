@@ -1,4 +1,4 @@
 @echo off
-java -jar HostsModify.jar test
+java -jar HostsModify-jar-with-dependencies.jar test
 exit
 @pause
