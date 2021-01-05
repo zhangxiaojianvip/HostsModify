@@ -40,7 +40,7 @@ public class LineReplaceWriter extends AbstractFileReader {
 
         //获取替换项
         AbstractFileReader abstractFileReader = new ReplaceItemReader();
-        abstractFileReader.getContextMap().put(HostsModifyConstant.DEV_OR_TEST, contextMap.get(HostsModifyConstant.DEV_OR_TEST));
+        abstractFileReader.getContextMap().put(HostsModifyConstant.ENVIRONMENT, contextMap.get(HostsModifyConstant.ENVIRONMENT));
         abstractFileReader.execute();
         replaceItemSourceMap = ClazzSupport.cast(abstractFileReader.getContextMap().get(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE));
         replaceItemTargetMap = ClazzSupport.cast(abstractFileReader.getContextMap().get(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE));

@@ -10,7 +10,7 @@ public class HostsModifyConstant {
     /** 要替换的域名映射总数量 */
     public static final String REPLACE_ITEM_TOTAL_KEY = "total";
     /** 本地开发或测试环境标识key */
-    public static final String DEV_OR_TEST = "devOrTest";
+    public static final String ENVIRONMENT = "environment";
     /** 替换项的源模板 %s 根据具体的数字替换 */
     public static final String SOURCE = "source[%s]=";
     /** 替换项的目标模板 %s 根据具体的数字替换 */
