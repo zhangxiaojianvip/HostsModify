@@ -4,6 +4,8 @@ import constants.HostsModifyConstant;
 import exception.BreakException;
 import exception.ContinueException;
 import file.AbstractFileReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import support.FilePathSupport;
 import support.StringSupport;
 
@@ -18,6 +20,7 @@ import java.util.Map;
  */
 public class TotalCountReader extends AbstractFileReader {
 
+    Logger logger = LoggerFactory.getLogger(TotalCountReader.class);
 
     @Override
     protected void preData(Map<String, Object> contextMap) {
@@ -27,7 +30,7 @@ public class TotalCountReader extends AbstractFileReader {
 
     @Override
     protected void lineDeal(String line, Map<String, Object> contextMap, CharArrayWriter outStream) {
-        System.out.println("TotalCountReader 当前行内容=" + line);
+        logger.info("TotalCountReader 当前行内容={}", line);
         if(line.contains(HostsModifyConstant.REPLACE_ITEM_TOTAL_KEY)) {
             String totalNumStr = StringSupport.totalSubString(line);
             if(totalNumStr.trim().equals(HostsModifyConstant.EMPTY_STRING)) {

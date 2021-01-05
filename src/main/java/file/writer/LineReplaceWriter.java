@@ -3,7 +3,9 @@ package file.writer;
 import constants.HostsModifyConstant;
 import exception.ContinueException;
 import file.AbstractFileReader;
-import file.reader.*;
+import file.reader.ReplaceItemReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import support.ClazzSupport;
 import support.SystemSupport;
 
@@ -19,6 +21,8 @@ import java.util.Map;
  * @since 2020年11月03日
  */
 public class LineReplaceWriter extends AbstractFileReader {
+
+    Logger logger = LoggerFactory.getLogger(LineReplaceWriter.class);
 
     private Map<String, Object> replaceItemSourceMap = new HashMap<>();
     private Map<String, Object> replaceItemTargetMap = new HashMap<>();
@@ -45,13 +49,13 @@ public class LineReplaceWriter extends AbstractFileReader {
 
     @Override
     protected void lineDeal(String line, Map<String, Object> contextMap, CharArrayWriter outStream) {
-        System.out.println("LineReplaceWriter 当前行内容=" + line);
+        logger.info("LineReplaceWriter 当前行内容={}" , line);
         replaceItemSourceMap.forEach((key, value) -> {
             if(line.contains((String) value)) {
                 String targetKey = (String) replaceItemKeyMap.get(key);
                 try {
-                    System.out.println("原值：" + value);
-                    System.out.println("替换后：" + replaceItemTargetMap.get(targetKey));
+                    logger.info("原值：{}" , value);
+                    logger.info("替换后：{}" , replaceItemTargetMap.get(targetKey));
                     outStream.write((String) replaceItemTargetMap.get(targetKey));
                 } catch (IOException e) {
                     e.printStackTrace();

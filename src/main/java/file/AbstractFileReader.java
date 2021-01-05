@@ -3,6 +3,8 @@ package file;
 import constants.HostsModifyConstant;
 import exception.BreakException;
 import exception.ContinueException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.CharArrayWriter;
@@ -20,6 +22,8 @@ import java.util.Map;
  * @since 2020年11月03日
  */
 public abstract class AbstractFileReader {
+    Logger logger = LoggerFactory.getLogger(AbstractFileReader.class);
+
     /** 读完是否要修改文件内容 true-修改 false-不修改 */
     private Boolean writeFile = false;
     /** 替换项文件路径 */
@@ -65,7 +69,7 @@ public abstract class AbstractFileReader {
     private void fileCirculation() {
         File file = new File(dataPath);
         if(!file.exists()) {
-            System.out.println(String.format("文件不存在,dataPath=%s", dataPath));
+            logger.info("文件不存在,dataPath={}", dataPath);
             throw new RuntimeException("文件不存在");
         }
         CharArrayWriter outStream = new CharArrayWriter();
@@ -94,8 +98,8 @@ public abstract class AbstractFileReader {
         //重写修改后的文件内容
         try {
             if(writeFile) {
-                System.out.println("回写内容：");
-                System.out.println(outStream);
+                logger.info("回写内容：");
+                logger.info(outStream.toString());
                 FileWriter out = new FileWriter(file);
                 outStream.writeTo(out);
                 out.close();

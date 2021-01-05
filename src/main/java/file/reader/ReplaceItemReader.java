@@ -3,6 +3,8 @@ package file.reader;
 import constants.HostsModifyConstant;
 import exception.ContinueException;
 import file.AbstractFileReader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import support.ClazzSupport;
 import support.FilePathSupport;
 import support.ReplaceItemCompareSupport;
@@ -19,6 +21,8 @@ import java.util.Map;
  * @since 2020年11月03日
  */
 public class ReplaceItemReader extends AbstractFileReader {
+
+    Logger logger = LoggerFactory.getLogger(ReplaceItemReader.class);
 
     /**
      * 需要替换总个数
@@ -51,7 +55,7 @@ public class ReplaceItemReader extends AbstractFileReader {
 
     @Override
     protected void lineDeal(String line, Map<String, Object> contextMap, CharArrayWriter outStream) {
-        System.out.println("ReplaceItemReader 当前行内容=" + line);
+        logger.info("ReplaceItemReader 当前行内容={}", line);
         Map<String, String> replaceItemSourceMap = new HashMap<>(1);
         Map<String, String> replaceItemTargetMap = new HashMap<>(1);
         for(int i = 0; i <= totalCount; i++) {
