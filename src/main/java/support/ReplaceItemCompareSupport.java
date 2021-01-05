@@ -6,7 +6,8 @@ package support;
  * @author 张晓键 (472649060@qq.com)
  * @since 2020年11月04日
  */
-public class ReplaceItemCompareSupport {
+public final class ReplaceItemCompareSupport {
+    private ReplaceItemCompareSupport(){}
     /**
      * 替换项源匹配
      *

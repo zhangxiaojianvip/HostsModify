@@ -10,7 +10,8 @@ import java.io.File;
  * @author 张晓键 (472694060@qq.com)
  * @since 2020年11月04日
  */
-public class FilePathSupport {
+public final class FilePathSupport {
+    private FilePathSupport(){}
     /**
      * 获取替换项文件路径
      *

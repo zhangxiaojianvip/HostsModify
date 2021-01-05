@@ -77,9 +77,6 @@ public abstract class AbstractFileReader {
         try(FileReader fileReader = new FileReader(file); BufferedReader in = new BufferedReader(fileReader)) {
             String line;
             while((line = in.readLine()) != null) {
-                if(line == null) {
-                    continue;
-                }
                 line = line.trim();
                 if(HostsModifyConstant.EMPTY_STRING.equals(line)) {
                     continue;
@@ -116,10 +113,18 @@ public abstract class AbstractFileReader {
         this.writeFile = true;
     }
 
+    /**
+     * 获取上下文
+     * @return 上下文
+     */
     public Map<String, Object> getContextMap() {
         return contextMap;
     }
 
+    /**
+     * 设置文件路径
+     * @param dataPath 文件路径
+     */
     protected void setDataPath(String dataPath) {
         this.dataPath = dataPath;
     }

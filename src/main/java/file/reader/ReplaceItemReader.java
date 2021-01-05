@@ -29,6 +29,11 @@ public class ReplaceItemReader extends AbstractFileReader {
      */
     private Integer totalCount;
 
+    /**
+     * 获取替换总数量，并且把替换项数据转换出来
+     *
+     * @param contextMap 上下文参数
+     */
     @Override
     protected void preData(Map<String, Object> contextMap) {
         String env = (String) contextMap.get(HostsModifyConstant.ENVIRONMENT);
@@ -49,10 +54,17 @@ public class ReplaceItemReader extends AbstractFileReader {
             replaceItemKeyMap.put(StringSupport.sourceFormat(i), StringSupport.targetFormat(i));
         }
         contextMap.put(HostsModifyConstant.REPLACE_ITEM_KEY, replaceItemKeyMap);
-        contextMap.put(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE,new HashMap<>(1));
-        contextMap.put(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE,new HashMap<>(1));
+        contextMap.put(HostsModifyConstant.REPLACE_ITEM_SOURCE_VALUE, new HashMap<>(1));
+        contextMap.put(HostsModifyConstant.REPLACE_ITEM_TARGET_VALUE, new HashMap<>(1));
     }
 
+    /**
+     * 获取替换项数据
+     *
+     * @param line       行内容
+     * @param contextMap 处理后数据
+     * @param outStream  输出流
+     */
     @Override
     protected void lineDeal(String line, Map<String, Object> contextMap, CharArrayWriter outStream) {
         logger.info("ReplaceItemReader 当前行内容={}", line);

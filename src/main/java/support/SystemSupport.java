@@ -8,7 +8,8 @@ import constants.HostsModifyConstant;
  * @author 张晓键 (472694060@qq.com)
  * @since 2020年11月04日
  */
-public class SystemSupport {
+public final class SystemSupport {
+    private SystemSupport(){}
 
     /**
      * 是否windows系统

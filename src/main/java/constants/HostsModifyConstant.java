@@ -6,7 +6,8 @@ package constants;
  * @author 张晓键 (472694060@qq.com)
  * @since 2020年11月03日
  */
-public class HostsModifyConstant {
+public final class HostsModifyConstant {
+    private HostsModifyConstant(){}
     /** 要替换的域名映射总数量 */
     public static final String REPLACE_ITEM_TOTAL_KEY = "total";
     /** 本地开发或测试环境标识key */

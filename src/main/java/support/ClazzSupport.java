@@ -6,7 +6,9 @@ package support;
  * @author 张晓键 (472694060@qq.com)
  * @since 2020年11月04日
  */
-public class ClazzSupport {
+public final class ClazzSupport {
+    private ClazzSupport(){}
+
     /**
      * 类转换
      *

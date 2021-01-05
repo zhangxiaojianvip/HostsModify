@@ -8,7 +8,8 @@ import constants.HostsModifyConstant;
  * @author 张晓键 (472694060@qq.com)
  * @since 2020年11月04日
  */
-public class StringSupport {
+public final class StringSupport {
+    private StringSupport(){}
     /**
      * 截取total的字符串值，如果长度不够则返回空字符串
      *
