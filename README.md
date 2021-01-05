@@ -3,7 +3,7 @@ Windows下的hosts文件内容一键替换工具
 
 使用方法：
 ---
-1、项目打包后生成HostsModify-jar-with-dependencies.jar
+1、使用maven命令 mvn package 项目打包后生成HostsModify-jar-with-dependencies.jar
 
 2、编辑dev_data和test_data文件（样例在代码的/src/main/resources/目录下）
 
