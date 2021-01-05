@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public class LineReplaceWriter extends AbstractFileReader {
 
-    Logger logger = LoggerFactory.getLogger(LineReplaceWriter.class);
+    private Logger logger = LoggerFactory.getLogger(LineReplaceWriter.class);
 
     private Map<String, Object> replaceItemSourceMap = new HashMap<>();
     private Map<String, Object> replaceItemTargetMap = new HashMap<>();

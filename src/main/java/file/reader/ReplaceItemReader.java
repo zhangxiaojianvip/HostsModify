@@ -22,7 +22,7 @@ import java.util.Map;
  */
 public class ReplaceItemReader extends AbstractFileReader {
 
-    Logger logger = LoggerFactory.getLogger(ReplaceItemReader.class);
+    private Logger logger = LoggerFactory.getLogger(ReplaceItemReader.class);
 
     /**
      * 需要替换总个数

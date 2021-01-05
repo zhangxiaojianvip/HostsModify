@@ -22,7 +22,7 @@ import java.util.Map;
  * @since 2020年11月03日
  */
 public abstract class AbstractFileReader {
-    Logger logger = LoggerFactory.getLogger(AbstractFileReader.class);
+    private Logger logger = LoggerFactory.getLogger(AbstractFileReader.class);
 
     /** 读完是否要修改文件内容 true-修改 false-不修改 */
     private Boolean writeFile = false;
@@ -112,7 +112,7 @@ public abstract class AbstractFileReader {
     /**
      * 修改标识为需要修改文件
      */
-    public void reWriteFile() {
+    protected void reWriteFile() {
         this.writeFile = true;
     }
 
@@ -120,7 +120,7 @@ public abstract class AbstractFileReader {
         return contextMap;
     }
 
-    public void setDataPath(String dataPath) {
+    protected void setDataPath(String dataPath) {
         this.dataPath = dataPath;
     }
 }

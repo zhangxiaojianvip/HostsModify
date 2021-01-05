@@ -20,7 +20,7 @@ import java.util.Map;
  */
 public class TotalCountReader extends AbstractFileReader {
 
-    Logger logger = LoggerFactory.getLogger(TotalCountReader.class);
+    private Logger logger = LoggerFactory.getLogger(TotalCountReader.class);
 
     @Override
     protected void preData(Map<String, Object> contextMap) {
