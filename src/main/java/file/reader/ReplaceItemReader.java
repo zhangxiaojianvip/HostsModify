@@ -38,10 +38,10 @@ public class ReplaceItemReader extends AbstractFileReader {
     protected void preData(Map<String, Object> contextMap) {
         String env = (String) contextMap.get(HostsModifyConstant.ENVIRONMENT);
 
-        AbstractFileReader fileReader = new TotalCountReader();
-        fileReader.getContextMap().put(HostsModifyConstant.ENVIRONMENT, env);
-        fileReader.execute();
-        Object totalObj = fileReader.getContextMap().get(HostsModifyConstant.REPLACE_ITEM_TOTAL_KEY);
+        AbstractFileReader totalCountReader = new TotalCountReader();
+        totalCountReader.getContextMap().put(HostsModifyConstant.ENVIRONMENT, env);
+        totalCountReader.execute();
+        Object totalObj = totalCountReader.getContextMap().get(HostsModifyConstant.REPLACE_ITEM_TOTAL_KEY);
         if(totalObj == null || Integer.parseInt(totalObj.toString()) == 0) {
             throw new RuntimeException("总数total不能为空");
         }
